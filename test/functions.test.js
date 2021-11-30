@@ -5,7 +5,8 @@ import {
     multiplyBy12ThenHalve,
     divideThenMultiply,
     returnAsAnArray,
-    returnAsAString
+    returnAsAString,
+    makeLuckyGreeting
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -86,7 +87,7 @@ skip('returnAsAnArray should take in three numbers and return those numbers in a
     expect.deepEqual(actual3, expected3, 'return array [30, 77, 80]');
 });
 
-test('returnAsAString should take in three numbers and return those numbers mushed together as a string', (expect) => {
+skip('returnAsAString should take in three numbers and return those numbers mushed together as a string', (expect) => {
     const expected1 = 234;
     const actual1 = returnAsAString(2, 3, 4);
 
@@ -99,4 +100,19 @@ test('returnAsAString should take in three numbers and return those numbers mush
     expect.equal(actual1, expected1, 'return string 234');
     expect.equal(actual2, expected2, 'return string 678');
     expect.equal(actual3, expected3, 'return string 307080');
+});
+
+test('makeLuckyGreeting should take in two numbers and return a greeting announcing that the sum of those numbers is today`s lucky number', (expect) => {
+    const expected1 = 'Hello! Your lucky number for the day is 8';
+    const actual1 = makeLuckyGreeting(4, 4);
+
+    const expected2 = 'Hello! Your lucky number for the day is 70';
+    const actual2 = makeLuckyGreeting(60, 10);
+
+    const expected3 = 'Hello! Your lucky number for the day is 52';
+    const actual3 = makeLuckyGreeting(12, 40);
+
+    expect.equal(actual1, expected1, 'return string `Hello! Your lucky number for the day is 8`');
+    expect.equal(actual2, expected2, 'return string `Hello! Your lucky number for the day is 70`');
+    expect.equal(actual3, expected3, 'return string `Hello! Your lucky number for the day is 52`');
 });
