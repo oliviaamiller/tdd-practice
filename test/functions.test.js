@@ -9,11 +9,12 @@ import {
     makeLuckyGreeting,
     getSecondItem,
     getLastItem,
+    getRandomNumber
 } from '../functions.js';
 
 const { test, skip } = QUnit;
 
-skip('addExclamationPoints should return a string with 3 exclamation points added to the end', (expect) => {
+test('addExclamationPoints should return a string with 3 exclamation points added to the end', (expect) => {
     const expected1 = 'puppy!!!';
     const actual1 = addExclamationPoints('puppy');
 
@@ -29,7 +30,7 @@ skip('addExclamationPoints should return a string with 3 exclamation points adde
 });
 
 
-skip('multiplyBySeven should take a number and multiply it by 7', (expect) => {
+test('multiplyBySeven should take a number and multiply it by 7', (expect) => {
     const expected1 = 14;
     const actual1 = multiplyBySeven(2);
 
@@ -44,7 +45,7 @@ skip('multiplyBySeven should take a number and multiply it by 7', (expect) => {
     expect.equal(actual3, expected3, '5.5 * 7 = 38.5');
 });
 
-skip('multiplyBy12ThenHalve should take a number, multiply it by 12, and then halve that number', (expect) => {
+test('multiplyBy12ThenHalve should take a number, multiply it by 12, and then halve that number', (expect) => {
     const expected1 = 12;
     const actual1 = multiplyBy12ThenHalve(2);
 
@@ -59,7 +60,7 @@ skip('multiplyBy12ThenHalve should take a number, multiply it by 12, and then ha
     expect.equal(actual3, expected3, '(5.5 * 12) / 2 = 33');
 });
 
-skip('divideThenMultiply should should take in three numbers, divide the first by the second, then multiply the result by the third', (expect) => {
+test('divideThenMultiply should should take in three numbers, divide the first by the second, then multiply the result by the third', (expect) => {
     const expected1 = 48;
     const actual1 = divideThenMultiply(12, 2, 8);
 
@@ -74,7 +75,7 @@ skip('divideThenMultiply should should take in three numbers, divide the first b
     expect.equal(actual3, expected3, '(25 / 5) * 6 = 30');
 });
 
-skip('returnAsAnArray should take in three numbers and return those numbers in an array', (expect) => {
+test('returnAsAnArray should take in three numbers and return those numbers in an array', (expect) => {
     const expected1 = [2, 3, 4];
     const actual1 = returnAsAnArray(2, 3, 4);
 
@@ -89,7 +90,7 @@ skip('returnAsAnArray should take in three numbers and return those numbers in a
     expect.deepEqual(actual3, expected3, 'return array [30, 77, 80]');
 });
 
-skip('returnAsAString should take in three numbers and return those numbers mushed together as a string', (expect) => {
+test('returnAsAString should take in three numbers and return those numbers mushed together as a string', (expect) => {
     const expected1 = 234;
     const actual1 = returnAsAString(2, 3, 4);
 
@@ -104,7 +105,7 @@ skip('returnAsAString should take in three numbers and return those numbers mush
     expect.equal(actual3, expected3, 'return string 307080');
 });
 
-skip('makeLuckyGreeting should take in two numbers and return a greeting announcing that the sum of those numbers is today`s lucky number', (expect) => {
+test('makeLuckyGreeting should take in two numbers and return a greeting announcing that the sum of those numbers is today`s lucky number', (expect) => {
     const expected1 = 'Hello! Your lucky number for the day is 8';
     const actual1 = makeLuckyGreeting(4, 4);
 
@@ -119,7 +120,7 @@ skip('makeLuckyGreeting should take in two numbers and return a greeting announc
     expect.equal(actual3, expected3, 'return string `Hello! Your lucky number for the day is 52`');
 });
 
-skip('getSecondItem should take an array and return the second item in the array', (expect) => {
+test('getSecondItem should take an array and return the second item in the array', (expect) => {
     const expected1 = 'apple';
     const actual1 = getSecondItem(['kiwi', 'apple', 'orange', 'plum']);
 
@@ -147,4 +148,23 @@ test('getLastItem should take an array and return the LAST item in the array, no
     expect.deepEqual(actual1, expected1, 'return plum');
     expect.deepEqual(actual2, expected2, 'return mouse');
     expect.deepEqual(actual3, expected3, 'return oval');
+});
+
+test('getRandomNumber should make a random number between 0 and 5', (expect) => {
+    const expected1 = 'number';
+    const actual1 = typeof Number;
+
+    const expected2 = getRandomNumber < 6;
+    const actual2 = true; 
+
+    expect.equal(actual1, expected1, 'return type of is number');
+    expect.equal(actual2, expected2, 'return a number less than 6');
+});
+
+skip('this test should be skipped', (expect) => {
+    const expected = true;
+
+    const actual = true;
+
+    expect.equal(actual, expected);
 });
