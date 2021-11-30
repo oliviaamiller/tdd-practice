@@ -3,6 +3,7 @@ import {
     addExclamationPoints,
     multiplyBySeven,
     multiplyBy12ThenHalve,
+    divideThenMultiply,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -38,7 +39,7 @@ skip('multiplyBySeven should take a number and multiply it by 7', (expect) => {
     expect.equal(actual3, expected3, '5.5 * 7 = 38.5');
 });
 
-test('multiplyBy12ThenHalve should take a number, multiply it by 12, and then halve that number', (expect) => {
+skip('multiplyBy12ThenHalve should take a number, multiply it by 12, and then halve that number', (expect) => {
     const expected1 = 12;
     const actual1 = multiplyBy12ThenHalve(2);
 
@@ -53,3 +54,17 @@ test('multiplyBy12ThenHalve should take a number, multiply it by 12, and then ha
     expect.equal(actual3, expected3, '(5.5 * 12) / 2 = 33');
 });
 
+test('divideThenMultiply should should take in three numbers, divide the first by the second, then multiply the result by the third', (expect) => {
+    const expected1 = 48;
+    const actual1 = divideThenMultiply(12, 2, 8);
+
+    const expected2 = 45;
+    const actual2 = divideThenMultiply(36, 4, 5);
+
+    const expected3 = 30;
+    const actual3 = divideThenMultiply(25, 5, 6);
+
+    expect.equal(actual1, expected1, '(12 / 2) * 8 = 48');
+    expect.equal(actual2, expected2, '(36 / 4) * 5 = 45');
+    expect.equal(actual3, expected3, '(25 / 5) * 6 = 30');
+});
