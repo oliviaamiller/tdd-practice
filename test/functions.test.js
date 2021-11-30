@@ -7,7 +7,8 @@ import {
     returnAsAnArray,
     returnAsAString,
     makeLuckyGreeting,
-    getSecondItem
+    getSecondItem,
+    getLastItem,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -118,7 +119,7 @@ skip('makeLuckyGreeting should take in two numbers and return a greeting announc
     expect.equal(actual3, expected3, 'return string `Hello! Your lucky number for the day is 52`');
 });
 
-test('getSecondItem should take an array and return the second item in the array', (expect) => {
+skip('getSecondItem should take an array and return the second item in the array', (expect) => {
     const expected1 = 'apple';
     const actual1 = getSecondItem(['kiwi', 'apple', 'orange', 'plum']);
 
@@ -131,4 +132,19 @@ test('getSecondItem should take an array and return the second item in the array
     expect.deepEqual(actual1, expected1, 'return apple');
     expect.deepEqual(actual2, expected2, 'return dog');
     expect.deepEqual(actual3, expected3, 'return square');
+});
+
+test('getLastItem should take an array and return the LAST item in the array, no matter the array`s length', (expect) => {
+    const expected1 = 'plum';
+    const actual1 = getLastItem(['kiwi', 'apple', 'orange', 'plum']);
+
+    const expected2 = 'mouse';
+    const actual2 = getLastItem(['cat', 'dog', 'mouse']);
+
+    const expected3 = 'oval';
+    const actual3 = getLastItem(['circle', 'square', 'triange', 'oval']);
+
+    expect.deepEqual(actual1, expected1, 'return plum');
+    expect.deepEqual(actual2, expected2, 'return mouse');
+    expect.deepEqual(actual3, expected3, 'return oval');
 });
