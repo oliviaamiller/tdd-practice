@@ -6,7 +6,8 @@ import {
     divideThenMultiply,
     returnAsAnArray,
     returnAsAString,
-    makeLuckyGreeting
+    makeLuckyGreeting,
+    getSecondItem
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -102,7 +103,7 @@ skip('returnAsAString should take in three numbers and return those numbers mush
     expect.equal(actual3, expected3, 'return string 307080');
 });
 
-test('makeLuckyGreeting should take in two numbers and return a greeting announcing that the sum of those numbers is today`s lucky number', (expect) => {
+skip('makeLuckyGreeting should take in two numbers and return a greeting announcing that the sum of those numbers is today`s lucky number', (expect) => {
     const expected1 = 'Hello! Your lucky number for the day is 8';
     const actual1 = makeLuckyGreeting(4, 4);
 
@@ -115,4 +116,19 @@ test('makeLuckyGreeting should take in two numbers and return a greeting announc
     expect.equal(actual1, expected1, 'return string `Hello! Your lucky number for the day is 8`');
     expect.equal(actual2, expected2, 'return string `Hello! Your lucky number for the day is 70`');
     expect.equal(actual3, expected3, 'return string `Hello! Your lucky number for the day is 52`');
+});
+
+test('getSecondItem should take an array and return the second item in the array', (expect) => {
+    const expected1 = 'apple';
+    const actual1 = getSecondItem(['kiwi', 'apple', 'orange', 'plum']);
+
+    const expected2 = 'dog';
+    const actual2 = getSecondItem(['cat', 'dog', 'mouse']);
+
+    const expected3 = 'square';
+    const actual3 = getSecondItem(['circle', 'square', 'triange', 'oval']);
+
+    expect.deepEqual(actual1, expected1, 'return apple');
+    expect.deepEqual(actual2, expected2, 'return dog');
+    expect.deepEqual(actual3, expected3, 'return square');
 });
