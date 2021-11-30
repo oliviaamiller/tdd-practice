@@ -5,6 +5,7 @@ import {
     multiplyBy12ThenHalve,
     divideThenMultiply,
     returnAsAnArray,
+    returnAsAString
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -70,7 +71,7 @@ skip('divideThenMultiply should should take in three numbers, divide the first b
     expect.equal(actual3, expected3, '(25 / 5) * 6 = 30');
 });
 
-test('returnAsAnArray should take in three numbers and return those numbers in an array', (expect) => {
+skip('returnAsAnArray should take in three numbers and return those numbers in an array', (expect) => {
     const expected1 = [2, 3, 4];
     const actual1 = returnAsAnArray(2, 3, 4);
 
@@ -83,4 +84,19 @@ test('returnAsAnArray should take in three numbers and return those numbers in a
     expect.deepEqual(actual1, expected1, 'return array [2, 3, 4]');
     expect.deepEqual(actual2, expected2, 'return array [6, 7, 8]');
     expect.deepEqual(actual3, expected3, 'return array [30, 77, 80]');
+});
+
+test('returnAsAString should take in three numbers and return those numbers mushed together as a string', (expect) => {
+    const expected1 = 234;
+    const actual1 = returnAsAString(2, 3, 4);
+
+    const expected2 = 678;
+    const actual2 = returnAsAString(6, 7, 8);
+
+    const expected3 = 307780;
+    const actual3 = returnAsAString(30, 77, 80);
+
+    expect.equal(actual1, expected1, 'return string 234');
+    expect.equal(actual2, expected2, 'return string 678');
+    expect.equal(actual3, expected3, 'return string 307080');
 });
